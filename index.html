@@ -48,10 +48,26 @@
             font-size: 20px;
         }
     </style>
-</head>
-<body>
+    <script>
+        function checkLogin() {
+            const id = prompt("아이디를 입력하세요:");
+            const pw = prompt("비밀번호를 입력하세요:");
 
-<div class="post-container">
+            if (id === "login" && pw === "login") {
+                showPostContainer();
+            } else {
+                window.location.href = "about:blank";
+            }
+        }
+
+        function showPostContainer() {
+            document.getElementById('postContainer').style.display = 'block';
+        }
+    </script>
+</head>
+<body onload="checkLogin()">
+
+<div class="post-container" style="display:none;" id="postContainer">
     <div class="profile-area">
         <img src="image/profile.jpg" alt="프로필 사진" class="profile-pic">
         <div>
